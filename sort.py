@@ -79,6 +79,7 @@ def sorting_all(folder):
 
 sorting_all(folder_path)
 
+# розпаковка архівів
 def unpack_archive(archive):
     archive_folder = archive / 'archives'
     for arch in archive_folder.iterdir():
@@ -92,7 +93,8 @@ def unpack_archive(archive):
             os.remove(arch)
 
 unpack_archive(folder_path)
-                
+
+# видалення пустих папок
 def clean(sort_path):
     for item in sort_path.iterdir():
         if item.is_dir():
